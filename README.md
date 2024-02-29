@@ -23,19 +23,39 @@ tools used:
 `Tableau` - Visualizatino of the data.
 
 ## week - 1 Set up
-To get your database ready, follow these simple steps:
+To get your database ready, follow the steps:
 
 1. **Install MySQL:** If MySQL isn't already on your computer, download and install it.
-
-2. **Get the SQL File:** Download the `LittleLemonDB.sql` file from this repository.
-
+2. **Get the SQL File:** Download the `LittleLemonDB.sql` file from this repository - in week-1.
 3. **Set Up in MySQL Workbench:**
    - Open MySQL Workbench.
    - Go to `Server` > `Data Import`.
    - Select `Import from Self-Contained File` and choose the `LittleLemonDB.sql` file.
    - Hit `Start Import` to bring in and run the SQL commands from the file.
 
+
 After these steps, your database will be set up with all the necessary tables and stored procedures ready to go.
+
+### Entity-Relationship Diagram
+---
+This diagram represents the database structure for the Little Lemon restaurant's management system.  aims to translate the technical structure into business-oriented language that highlights the relevance of each part of the diagram to the client's daily operations.
+![LittleLemonDM](https://github.com/DeevidHa/metadb-capstone-project/assets/57150923/1097525a-1e3d-4aa1-8148-a82d26618cae)
+
+- **Staff Information**: This entity holds details about your staff members, including their roles and salaries. It's the core of your human resources data.
+- **Bookings**: Here, we manage customer reservations with details about the booking time and the table number reserved. It links to both your customers and staff, showing who booked and who will be serving them.
+- **Customer Details**: This entity stores information about your customers, like their names, contact numbers, and email addresses, which is vital for your marketing and customer relationship efforts.
+- **Orders**: This is where we track each order placed, linked to the menu, booking, and staff information. It records what was ordered, by whom, the cost, and the table number, giving you a comprehensive view of sales transactions.
+- **Menu**: It lists all the items on your menu, categorized by type of cuisine, starters, main courses, drinks, and desserts. This allows for easy updates and management of what you offer.
+- **Order Delivery Status**: For orders that are out for delivery, this entity keeps track of the delivery date and the status, ensuring you have up-to-date information on order fulfillment.
+---
+
+## week - 2 
+Refer to the folder for extra screenshots
+
+## week - 3 
+
+
+
 
 
 
