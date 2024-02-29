@@ -22,7 +22,7 @@ tools used:
 `Python` - Setting up a client and interact with the database.
 `Tableau` - Visualizatino of the data.
 
-## week - 1 Set up
+## week - 1 - Setup
 To get your database ready, follow the steps:
 
 1. **Install MySQL:** If MySQL isn't already on your computer, download and install it.
@@ -49,10 +49,10 @@ This diagram represents the database structure for the Little Lemon restaurant's
 - **Order Delivery Status**: For orders that are out for delivery, this entity keeps track of the delivery date and the status, ensuring you have up-to-date information on order fulfillment.
 ---
 
-## week - 2 
+## week - 2 - Storing MySQL procedures
 Refer to the folder for extra screenshots
 
-## week - 3 
+## week - 3 - Visualization in Tableau
 
 
 
