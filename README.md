@@ -51,6 +51,46 @@ This diagram represents the database structure for the Little Lemon restaurant's
 
 ## week - 2 - Storing MySQL procedures
 Refer to the folder for extra screenshots
+- `GetMaxQuantity()`
+```sql
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS GetMaxQuantity$$
+
+CREATE PROCEDURE GetMaxQuantity()
+BEGIN
+    DECLARE MaxQty INT;    
+    SELECT MAX(Quantity) INTO MaxQty FROM Orders;
+    SELECT MaxQty AS `Maximum ordered quantity`;
+END$$
+
+DELIMITER ;
+###
+CALL GetMaxQuantity();
+```
+- `CheckBooking()`
+```sql
+placeholder
+```
+- `UpdateBooking()`
+```sql
+USE `LittleLemonDM`;
+
+DROP PROCEDURE IF EXISTS UpdateBooking;
+DELIMITER $$
+
+CREATE PROCEDURE UpdateBooking(IN BookingID INT, IN BookDate DATE) 
+BEGIN
+	UPDATE Bookings SET BookDate = BookDate WHERE BookingID = BookingID; 
+	SELECT CONCAT("Booking ", BookingID, " updated") AS "Confirmation"; 
+END$$
+ 
+DELIMITER ; 
+###
+Call UpdateBooking(10100, '2024-02-25 21:00:00');
+```
+
+
 
 ## week - 3 - Visualization in Tableau
 
@@ -58,7 +98,8 @@ Refer to the folder for extra screenshots
 ![Screenshot 2024-02-28 at 13 04 49](https://github.com/DeevidHa/metadb-capstone-project/assets/57150923/94151449-d46f-4cbd-a472-a9f32c051ef6)
 - `Profit Chart`
 ![Screenshot 2024-02-28 at 13 09 48](https://github.com/DeevidHa/metadb-capstone-project/assets/57150923/2e0a0f39-75ec-4934-8340-0541275d8f24)
-- `Sales Bub![Screenshot 2024-02-28 at 13 09 48](https://github.com/DeevidHa/metadb-capstone-project/assets/57150923/e9b22c3d-eb43-49c1-85d6-c8ab6a6b181b)
+- `Sales Bubble chart`
+![Screenshot 2024-02-28 at 13 09 48](https://github.com/DeevidHa/metadb-capstone-project/assets/57150923/e9b22c3d-eb43-49c1-85d6-c8ab6a6b181b)
 ble Chart` 
 ![Screenshot 2024-02-28 at 13 16 11](https://github.com/DeevidHa/metadb-capstone-project/assets/57150923/f4fddd46-0f6b-49af-85d5-147b7a2ce427)
 - `Cuisine Sales and Profit`
