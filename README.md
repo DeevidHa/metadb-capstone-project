@@ -89,7 +89,98 @@ DELIMITER ;
 ###
 Call UpdateBooking(10100, '2024-02-25 21:00:00');
 ```
+- `Addbooking()`
+```sql
+USE `LittleLemonDM`;
 
+DROP PROCEDURE IF EXISTS AddBooking;
+DELIMITER $$
+
+CREATE PROCEDURE AddBooking(IN BookingID INT, IN CustomerID INT, IN BookDate DATETIME, IN StaffID INT, IN TableNumber INT)
+BEGIN
+    INSERT INTO Bookings (BookingID, CustomerID, BookDate, StaffID, TableNumber)
+    VALUES (BookingID, CustomerID, BookDate, StaffID, TableNumber);
+    SELECT CONCAT("New Booking Added: ", BookingID) AS Confirmation;
+END$$
+
+DELIMITER ;
+##
+CALL AddBooking(10102, 15102, '2024-02-26 20:00:00', 15, 4);
+```
+- `CancelBooking()`
+```sql
+USE `LittleLemonDM`;
+DROP PROCEDURE IF EXISTS CancelBooking;
+DELIMITER $$
+CREATE PROCEDURE CancelBooking(IN BookingID INT)
+BEGIN
+DELETE FROM Bookings WHERE BookingID = BookINGID;
+SELECT CONCAT("Booking ", BookID, " cancelled") AS "Confirmation"; 
+END//
+
+DELIMITER ;
+
+###
+CALL CancelBooking('2024-02-25 13:00:00',1);
+```
+
+- `AddValidBooking()`
+```sql
+USE `LittleLemonDM`;
+DROP PROCEDURE IF EXISTS AddValidBooking;
+DELIMITER $$ 
+
+CREATE PROCEDURE AddValidBooking(IN BookDate DATE, IN TableNum INT, IN CustomID INT)
+BEGIN
+    DECLARE bookingCount INT DEFAULT 0;
+    
+    -- Check for existing bookings for the given date and table number before starting the transaction
+    SELECT COUNT(*) INTO bookingCount
+    FROM Bookings
+    WHERE `BookDate` = BookDate AND `TableNumber` = TableNum;
+
+    -- Start the transaction after the check
+    START TRANSACTION;
+
+    IF bookingCount = 0 THEN
+        -- If no existing booking is found, proceed to insert the new booking
+        INSERT INTO Bookings (`Date`, `TableNumber`, `CustomerID`)
+        VALUES (BookDate, TableNum, CustomID);
+        
+        -- Commit the transaction to save the new booking
+        COMMIT;
+        SELECT 'Booking successful.' AS Message;
+    ELSE
+        -- If an existing booking is found, rollback any changes made during the transaction (if any)
+        ROLLBACK;
+        SELECT CONCAT("Table ", TableNum, " is already booked - booking cancelled") AS "Booking Status";
+    END IF;
+END$$
+
+DELIMITER ; 
+
+CALL AddValidBooking('2024-02-01 20:00:00', 5, 15001);
+#Output:
+# Booking Status
+#'Table 5 is already booked - booking cancelled'
+```
+
+- `CancelOrder()`
+```sql
+USE `LittleLemonDM`;
+DROP PROCEDURE IF EXISTS CancelBooking;
+DELIMITER $$
+CREATE PROCEDURE CancelBooking(IN BookingID INT)
+BEGIN
+DELETE FROM Bookings WHERE BookingID = BookINGID;
+SELECT CONCAT("Booking ", BookID, " cancelled") AS "Confirmation"; 
+END//
+
+DELIMITER ;
+
+#----
+CALL CancelBooking('2024-02-25 13:00:00',1);
+```
 
 
 ## week - 3 - Visualization in Tableau
