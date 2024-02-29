@@ -54,8 +54,17 @@ Refer to the folder for extra screenshots
 
 ## week - 3 - Visualization in Tableau
 
-
-
+- `Customers Sales > $70`
+![Screenshot 2024-02-28 at 13 04 49](https://github.com/DeevidHa/metadb-capstone-project/assets/57150923/94151449-d46f-4cbd-a472-a9f32c051ef6)
+- `Profit Chart`
+![Screenshot 2024-02-28 at 13 09 48](https://github.com/DeevidHa/metadb-capstone-project/assets/57150923/2e0a0f39-75ec-4934-8340-0541275d8f24)
+- `Sales Bub![Screenshot 2024-02-28 at 13 09 48](https://github.com/DeevidHa/metadb-capstone-project/assets/57150923/e9b22c3d-eb43-49c1-85d6-c8ab6a6b181b)
+ble Chart` 
+![Screenshot 2024-02-28 at 13 16 11](https://github.com/DeevidHa/metadb-capstone-project/assets/57150923/f4fddd46-0f6b-49af-85d5-147b7a2ce427)
+- `Cuisine Sales and Profit`
+![Screenshot 2024-02-28 at 13 20 39](https://github.com/DeevidHa/metadb-capstone-project/assets/57150923/76dde2fd-4dd2-49c1-819e-752b11ccf4a5)
+- `Dashboard`
+![Screenshot 2024-02-28 at 13 34 07](https://github.com/DeevidHa/metadb-capstone-project/assets/57150923/eacb8633-58eb-4823-844f-bea7ec4481ea)
 
 
 
